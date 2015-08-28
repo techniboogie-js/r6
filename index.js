@@ -5,7 +5,7 @@ module.exports = function(options) {
   var contextPath = '';
 
   if (options && options.contextPath) {
-    contextPath = options.contextPath;
+    contextPath = path.resolve(options.contextPath);
   }
   else {
     contextPath = path.dirname(require.main.filename);
