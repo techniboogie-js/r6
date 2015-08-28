@@ -9,6 +9,7 @@
 ###### Options
 - **contextPath**: The root directory to search from. If not specified, r6 will use the directory of your main js file (entry point).
 - **useGlobal**: Assigns the r6 function to the global scope as "r6" and returns *undefined*. This prevents you from having to re-require r6 in all js files.
+- **optimize**: Bypasses local module search, but requires the local modules to have a leading forward-slash '/'. Good to use if you intend to use r6 as a replacement for require(). *This is optional, to retain backwards-compatibility, but it's use is **recommended***.
 
 ###### *Examples*
     // Instead of...
@@ -20,9 +21,10 @@
     var fu = r6('fight/kung');
 
 
-    // Use with installed modules if you want (although that comes with overhead)
-    var r6 = require('r6')({ contextPath: __dirname });
-    var fu = r6('fight/kung');
+    // Use with installed modules if you want
+    // (In this case, the "optimize" option is suggested)
+    var r6 = require('r6')({ contextPath: __dirname, optimize: true });
+    var fu = r6('/fight/kung');
     var path = r6('path');
 
 
