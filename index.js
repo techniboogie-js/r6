@@ -21,13 +21,10 @@ module.exports = function(options) {
   function r6(lib) {
     var absPath = path.join(contextPath, lib);
 
-    if (options && options.optimize === true) {
-
-      if (lib.charAt(0) == '/') {
-        return require(absPath);
-      }
+    if (lib.charAt(0) == '/') {
+      return require(absPath);
     }
-    else {
+    else if (options && options.lagacy === true) {
       var fileList = fs.readdirSync(path.dirname(absPath));
       var regex = new RegExp(path.basename(absPath) + '(\\.[Jj][Ss])?$');
 

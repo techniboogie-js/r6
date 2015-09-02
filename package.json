@@ -1,7 +1,7 @@
 {
   "name": "r6",
-  "version": "1.1.2",
-  "description": "Allows loading local modules using paths relative to a context path. This elminates the frustration of require() using paths relative to the current file. This can be a pain when doing some very deep references, or when moving files around.",
+  "version": "2.0.0",
+  "description": "Allows loading local modules using paths relative to a context path. This eliminates the frustration of require() using paths relative to the current file. This can be a pain when doing some very deep references, or when moving files around.",
   "keywords": ["require"],
   "main": "index.js",
   "homepage": "https://github.com/techniboogie/r6",
